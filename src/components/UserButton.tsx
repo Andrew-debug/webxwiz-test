@@ -1,12 +1,17 @@
-import Link from "next/link";
+"use client";
+import { ReactNode } from "react";
 import styles from "./components.module.scss";
 
-const UserButton = ({ href, Icon }: { href: string; Icon: string }) => {
+const UserButton = ({
+  handleClick,
+  children,
+}: {
+  handleClick?: () => void;
+  children: ReactNode;
+}) => {
   return (
-    <button className={styles["user-button"]}>
-      <Link href={href}>
-        <Icon />
-      </Link>
+    <button onClick={handleClick} className={styles["user-button"]}>
+      {children}
     </button>
   );
 };

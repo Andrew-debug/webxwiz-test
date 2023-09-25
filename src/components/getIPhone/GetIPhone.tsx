@@ -24,15 +24,18 @@ const GetIPhone = async () => {
       <div className="flex justify-center max-w-[1440px] mx-auto">
         <ul className="flex flex-wrap items-center gap-4 mt-10">
           {products.map((product, index) => {
-            const { category, thumbnail, price, title } = product;
+            const { id, category, thumbnail, price, title, description } =
+              product;
             return (
               <Product
                 key={index}
+                product={product}
+                id={id}
                 category={category}
-                href="/"
                 image={thumbnail}
                 price={price}
                 title={title}
+                description={description}
               />
             );
           })}

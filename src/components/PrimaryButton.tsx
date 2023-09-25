@@ -1,9 +1,15 @@
-import Link from "next/link";
+"use client";
 import styles from "./components.module.scss";
-const PrimaryButton = ({ href, text }: { href: string; text: string }) => {
+const PrimaryButton = ({
+  text,
+  handleClick,
+}: {
+  text: string;
+  handleClick?: () => void;
+}) => {
   return (
-    <button className={styles["primary-button"]}>
-      <Link href={href}>{text}</Link>
+    <button onClick={handleClick} className={styles["primary-button"]}>
+      {text}
     </button>
   );
 };

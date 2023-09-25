@@ -3,8 +3,8 @@ import NavLink from "./NavLink";
 import styles from "./navbar.module.scss";
 import Apple from "@/assets/icons/apple.svg";
 import Search from "@/assets/icons/search.svg";
-import Bag from "@/assets/icons/bag.svg";
 import Person from "@/assets/icons/person.svg";
+import ShoppingCart from "../shoppingCart/ShoppingCart";
 const Navbar = () => {
   return (
     <nav
@@ -30,8 +30,10 @@ const Navbar = () => {
           </div>
           <input className={styles.input} type="text" placeholder="Search" />
         </div>
-        <UserButton href="/" Icon={Bag} />
-        <UserButton href="/" Icon={Person} />
+        <ShoppingCart />
+        <UserButton>
+          <Person />
+        </UserButton>
       </section>
     </nav>
   );

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Product from "../Product";
-import styles from "./roductsMain.module.scss";
+import styles from "./productsMain.module.scss";
 import { IFetchedProduct } from "@/types";
 
 const ProductsClient = ({ products }: { products: IFetchedProduct[] }) => {
@@ -40,15 +40,18 @@ const ProductsClient = ({ products }: { products: IFetchedProduct[] }) => {
         <ul className="flex flex-wrap items-center gap-4">
           {(filter === "all" ? products : filteredData).map(
             (product, index) => {
-              const { category, thumbnail, price, title } = product;
+              const { id, category, thumbnail, price, title, description } =
+                product;
               return (
                 <Product
                   key={index}
+                  product={product}
+                  id={id}
                   category={category}
-                  href="/"
                   image={thumbnail}
                   price={price}
                   title={title}
+                  description={description}
                 />
               );
             }

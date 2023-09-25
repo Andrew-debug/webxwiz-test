@@ -57,7 +57,7 @@ const HeroLeft = () => {
           while staying present in the world around you
         </p>
         <div className="mt-10">
-          <PrimaryButton href="/" text="Pre-Order Now" />
+          <PrimaryButton text="Pre-Order Now" />
         </div>
       </div>
     </div>

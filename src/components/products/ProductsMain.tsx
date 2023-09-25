@@ -6,7 +6,6 @@ import { IFetchedProduct } from "@/types";
 const ProductsMain = async () => {
   const res = await axios.get("https://dummyjson.com/products");
   const products: IFetchedProduct[] = res?.data?.products.slice(4, 12) || [];
-
   return (
     <section className="relative flex justify-center items-center mt-20">
       <div className={generalStyles["products-bg"]}></div>

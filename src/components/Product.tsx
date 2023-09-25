@@ -1,15 +1,27 @@
 import Image from "next/image";
 import React from "react";
-import PrimaryButton from "./PrimaryButton";
+import { IFetchedProduct } from "@/types";
+import ProductModal from "./products/ProductModal";
+
 interface IProduct {
+  product: IFetchedProduct;
+  id: number;
   title: string;
   price: number;
   image: string;
-  href: string;
   category: string;
+  description: string;
 }
 
-const Product = ({ title, price, image, href, category }: IProduct) => {
+const Product = ({
+  product,
+  id,
+  title,
+  price,
+  image,
+  category,
+  description,
+}: IProduct) => {
   return (
     <li className="relative w-[310px] h-[400px] bg-white rounded-lg">
       <h3 className="max-w-[200px] truncate absolute left-2 top-2 bg-white rounded-lg p-2 z-10 text-3xl font-semibold">
@@ -26,11 +38,18 @@ const Product = ({ title, price, image, href, category }: IProduct) => {
           alt={category}
           className="rounded-md"
           quality={80}
+          style={{ objectFit: "cover" }}
         />
       </div>
-      <div className="absolute right-2 bottom-4 bg-white rounded-lg p-2">
-        <PrimaryButton href={href} text="Details" />
-      </div>
+      <ProductModal
+        id={id}
+        product={product}
+        title={title}
+        price={price}
+        image={image}
+        category={category}
+        description={description}
+      />
     </li>
   );
 };
