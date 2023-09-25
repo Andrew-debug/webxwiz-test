@@ -8,7 +8,7 @@ import Person from "@/assets/icons/person.svg";
 const Navbar = () => {
   return (
     <nav
-      className={`flex justify-between items-center mx-auto my-4 w-full max-w-[1440px] px-5 ${styles.nav}`}
+      className={`flex justify-between items-center mx-auto my-4 w-full max-w-[1440px] ${styles.nav}`}
     >
       <ul className="flex gap-6">
         <NavLink href={`/`} text="Home" />
@@ -21,7 +21,7 @@ const Navbar = () => {
       >
         <Apple />
       </section>
-      <section className="flex items-center gap-4 mr-14">
+      <section className="flex items-center gap-4 mr-16">
         <div className={`flex items-center ${styles["input-wrap"]}`}>
           <div
             className={`flex justify-center items-center ${styles["search-wrap"]}`}

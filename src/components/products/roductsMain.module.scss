@@ -1,0 +1,33 @@
+.filter {
+  padding: 8px 16px;
+  border: 1px solid black;
+  border-radius: 25px;
+  text-transform: capitalize;
+  transition: all ease-in 0.1s;
+  cursor: pointer;
+  &:hover {
+    background: rgb(70, 70, 70);
+    background: linear-gradient(
+      90deg,
+      rgba(70, 70, 70, 1) 0%,
+      rgba(59, 59, 59, 1) 0%,
+      rgba(24, 24, 24, 1) 99%
+    );
+    color: #fff;
+  }
+}
+.filter-active {
+  padding: 8px 16px;
+  border: 1px solid black;
+  border-radius: 25px;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: #fff;
+  background: rgb(70, 70, 70);
+  background: linear-gradient(
+    90deg,
+    rgba(70, 70, 70, 1) 0%,
+    rgba(59, 59, 59, 1) 0%,
+    rgba(24, 24, 24, 1) 99%
+  );
+}

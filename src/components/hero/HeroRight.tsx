@@ -3,14 +3,14 @@ import Image from "next/image";
 import styles from "./hero.module.scss";
 const HeroRight = () => {
   return (
-    <section className="w-[50%]">
+    <div className="w-[50%]">
       <div className={`${styles["hero-wrap"]}`}>
         <Image src={HeroImage} width={650} alt="hero" />
         <div className={styles["hero-bg"]}></div>
         <div className={styles["hero-shadow--first"]}></div>
         <div className={styles["hero-shadow--second"]}></div>
       </div>
-    </section>
+    </div>
   );
 };
 

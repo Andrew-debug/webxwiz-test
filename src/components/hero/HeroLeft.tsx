@@ -40,7 +40,7 @@ const HeroHeader = ({
 
 const HeroLeft = () => {
   return (
-    <section className="w-[50%] flex justify-center items-center">
+    <div className="w-[50%] flex items-center">
       <div className="max-w-[520px]">
         <HeroHeader text="Elevating life" image={heroText1} width={190} />
         <HeroHeader text="To Pro-Level Precision" />
@@ -50,15 +50,17 @@ const HeroLeft = () => {
           image={heroText2}
           width={150}
         />
-        <p className="text-sm text-[#464646] mt-4">
+        <p className="text-[#464646] mt-4">
           With Vision Pro, you have an infinite canvas that transforms how you
           use the apps you love. Arrange apps anywhere and scale them to the
           perfect size, making the workspace of your dreams a reality — all
           while staying present in the world around you
         </p>
-        <PrimaryButton href="/" text="Pre-Order Now" />
+        <div className="mt-10">
+          <PrimaryButton href="/" text="Pre-Order Now" />
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
