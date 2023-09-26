@@ -2,10 +2,15 @@ import axios from "axios";
 import generalStyles from "../components.module.scss";
 import ProductsClient from "./ProductsClient";
 import { IFetchedProduct } from "@/types";
+import { DictionaryEntry } from "@/constants/content";
 
-const ProductsMain = async () => {
+const ProductsMain = async ({ dict }: { dict: DictionaryEntry }) => {
   const res = await axios.get("https://dummyjson.com/products");
   const products: IFetchedProduct[] = res?.data?.products.slice(4, 12) || [];
+  const {
+    getIPhone: { startPrice },
+    details,
+  } = dict;
   return (
     <section className="relative flex justify-center items-center mt-20">
       <div className={generalStyles["products-bg"]}></div>
@@ -13,7 +18,11 @@ const ProductsMain = async () => {
         <h4 className="text-4xl mt-4">
           Explore in <span className="font-semibold">Products</span>
         </h4>
-        <ProductsClient products={products} />
+        <ProductsClient
+          startPrice={startPrice}
+          details={details}
+          products={products}
+        />
       </div>
     </section>
   );

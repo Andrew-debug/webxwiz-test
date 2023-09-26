@@ -4,6 +4,13 @@ $primary-white: #f5f5f8;
 .nav {
   color: $primary-black;
   font-size: 1rem;
+  margin: 16px auto;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.nav-links li:first-child {
+  font-weight: 600;
 }
 
 .apple-wrap {

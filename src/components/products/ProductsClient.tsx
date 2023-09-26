@@ -4,7 +4,15 @@ import Product from "../Product";
 import styles from "./productsMain.module.scss";
 import { IFetchedProduct } from "@/types";
 
-const ProductsClient = ({ products }: { products: IFetchedProduct[] }) => {
+const ProductsClient = ({
+  products,
+  details,
+  startPrice,
+}: {
+  products: IFetchedProduct[];
+  details: string;
+  startPrice: string;
+}) => {
   const [filter, setFilter] = useState("all");
 
   const allFilters: string[] = products
@@ -39,22 +47,14 @@ const ProductsClient = ({ products }: { products: IFetchedProduct[] }) => {
       <div className="flex justify-center max-w-[1288px] mx-auto">
         <ul className="flex flex-wrap items-center gap-4">
           {(filter === "all" ? products : filteredData).map(
-            (product, index) => {
-              const { id, category, thumbnail, price, title, description } =
-                product;
-              return (
-                <Product
-                  key={index}
-                  product={product}
-                  id={id}
-                  category={category}
-                  image={thumbnail}
-                  price={price}
-                  title={title}
-                  description={description}
-                />
-              );
-            }
+            (product, index) => (
+              <Product
+                key={index}
+                details={details}
+                startPrice={startPrice}
+                product={product}
+              />
+            )
           )}
         </ul>
       </div>

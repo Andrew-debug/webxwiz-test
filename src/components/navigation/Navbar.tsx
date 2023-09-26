@@ -5,16 +5,16 @@ import Apple from "@/assets/icons/apple.svg";
 import Search from "@/assets/icons/search.svg";
 import Person from "@/assets/icons/person.svg";
 import ShoppingCart from "../shoppingCart/ShoppingCart";
-const Navbar = () => {
+import { DictionaryEntry } from "@/constants/content";
+
+const Navbar = ({ dict }: { dict: DictionaryEntry }) => {
   return (
-    <nav
-      className={`flex justify-between items-center mx-auto my-4 w-full max-w-[1440px] ${styles.nav}`}
-    >
-      <ul className="flex gap-6">
-        <NavLink href={`/`} text="Home" />
-        <NavLink href={`/products`} text="Products" isDropdown />
-        <NavLink href={`/entertainment`} text="Entertainment" />
-        <NavLink href={`/support`} text="Support" />
+    <nav className={`flex justify-between items-center ${styles.nav}`}>
+      <ul className={`flex gap-6 ${styles["nav-links"]}`}>
+        <NavLink href={`/`} text={dict.header.nav.home} />
+        <NavLink href={`/`} text={dict.header.nav.products} isDropdown />
+        <NavLink href={`/`} text={dict.header.nav.entertainment} />
+        <NavLink href={`/`} text={dict.header.nav.support} />
       </ul>
       <section
         className={`flex justify-center items-center ${styles["apple-wrap"]}`}
@@ -28,7 +28,11 @@ const Navbar = () => {
           >
             <Search />
           </div>
-          <input className={styles.input} type="text" placeholder="Search" />
+          <input
+            className={styles.input}
+            type="text"
+            placeholder={dict.header.search}
+          />
         </div>
         <ShoppingCart />
         <UserButton>

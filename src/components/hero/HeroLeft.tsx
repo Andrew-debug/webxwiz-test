@@ -3,6 +3,7 @@ import heroText2 from "@/assets/images/hero-text-2.png";
 import Image, { StaticImageData } from "next/image";
 import styles from "./hero.module.scss";
 import PrimaryButton from "../PrimaryButton";
+import { DictionaryEntry } from "@/constants/content";
 
 const HeroHeader = ({
   text,
@@ -38,26 +39,27 @@ const HeroHeader = ({
   );
 };
 
-const HeroLeft = () => {
+const HeroLeft = ({ dict }: { dict: DictionaryEntry }) => {
   return (
     <div className="w-[50%] flex items-center">
-      <div className="max-w-[520px]">
-        <HeroHeader text="Elevating life" image={heroText1} width={190} />
-        <HeroHeader text="To Pro-Level Precision" />
+      <div className="">
         <HeroHeader
-          text="With Vision Pro"
+          text={dict.heroLeft.firstTitle}
+          image={heroText1}
+          width={190}
+        />
+        <HeroHeader text={dict.heroLeft.secondTitle} />
+        <HeroHeader
+          text={dict.heroLeft.thirdTitle}
           reversed
           image={heroText2}
           width={150}
         />
-        <p className="text-[#464646] mt-4">
-          With Vision Pro, you have an infinite canvas that transforms how you
-          use the apps you love. Arrange apps anywhere and scale them to the
-          perfect size, making the workspace of your dreams a reality — all
-          while staying present in the world around you
+        <p className="max-w-[600px] text-[#464646] mt-4">
+          {dict.heroLeft.paragraph}
         </p>
         <div className="mt-10">
-          <PrimaryButton text="Pre-Order Now" />
+          <PrimaryButton text={dict.heroLeft.button} />
         </div>
       </div>
     </div>
