@@ -1,3 +1,23 @@
+$layout-breakpoint-sm: 672px;
+$layout-breakpoint-md: 800px;
+$layout-breakpoint-base: 960px;
+$layout-breakpoint-lg: 1200px;
+$layout-breakpoint-xl: 1480px;
+
+.products {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.filter-wrap {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
 .filter {
   padding: 8px 16px;
   border: 1px solid black;
@@ -41,4 +61,22 @@
   background-color: #fff;
   box-shadow: 24px;
   padding: 4rem;
+}
+
+@media (max-width: $layout-breakpoint-sm) {
+  .filter-wrap {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .modal-inner {
+    width: 400px;
+  }
+}
+@media (max-width: $layout-breakpoint-md) {
+  .modal-inner {
+    width: 600px;
+  }
+  .products {
+    margin-top: 20px;
+  }
 }

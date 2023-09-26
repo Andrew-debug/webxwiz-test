@@ -63,7 +63,7 @@ export default function ShoppingCart() {
             <>
               <ul className="flex flex-col gap-4">
                 {cartItems.map((item, index) => (
-                  <li key={index} className="relative flex h-[140px]">
+                  <li key={index} className={styles["cart-item"]}>
                     <button
                       className="absolute top-0 right-0"
                       onClick={() => dispatch(deleteItem(item.id))}

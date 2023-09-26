@@ -1,4 +1,5 @@
 import * as React from "react";
+import styles from "./shoppingCart.module.scss";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -39,7 +40,7 @@ export default function ShoppingCartItem({
     }
   };
   return (
-    <Card sx={{ width: "100%", maxHeight: 200, display: "flex" }}>
+    <Card className={styles["cart-item--inner"]}>
       <Image
         width={200}
         height={100}
@@ -47,7 +48,6 @@ export default function ShoppingCartItem({
         src={img}
         alt={category}
       />
-      {/* <CardMedia component="img" sx={{}} image={img} alt={category} /> */}
       <CardContent sx={{ width: "100%" }}>
         <Typography
           sx={{ width: "100%" }}

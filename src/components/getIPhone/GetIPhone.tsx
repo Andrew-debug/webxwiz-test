@@ -1,32 +1,33 @@
 import Link from "next/link";
 import generalStyles from "../components.module.scss";
 import { ArrowRight } from "lucide-react";
-import axios from "axios";
 import Product from "../Product";
 import { IFetchedProduct } from "@/types";
 import { DictionaryEntry } from "@/constants/content";
-
+import styles from "./getIPhone.module.scss";
 const GetIPhone = async ({ dict }: { dict: DictionaryEntry }) => {
-  const res = await axios.get("https://dummyjson.com/products");
-  const products: IFetchedProduct[] = res?.data?.products.slice(0, 4) || [];
+  const res = await fetch("http://localhost:3000/api/productsData").then(
+    (res) => res.json()
+  );
+  const products: IFetchedProduct[] = res.slice(0, 4) || [];
   const {
     getIPhone: { startPrice },
     details,
   } = dict;
   return (
-    <section className="relative mt-20">
+    <section className={styles["getIPhone"]}>
       <div className={generalStyles["products-bg"]}></div>
-      <div className="flex justify-between items-center max-w-[1440px] mx-auto pt-10">
-        <h2 className="text-4xl">
-          {dict.getIPhone.title} <span className="font-semibold">iPhone</span>
-        </h2>
-        <Link href={"/"} className="flex items-center gap-4">
-          <span className="font-semibold">{dict.getIPhone.allLink}</span>
-          <ArrowRight size={20} />
-        </Link>
-      </div>
-      <div className="flex justify-center max-w-[1440px] mx-auto">
-        <ul className="flex flex-wrap items-center gap-4 mt-10">
+      <div className={styles["getIPhone-wrap"]}>
+        <div className={styles["getIPhone-title"]}>
+          <h2 className="text-4xl">
+            {dict.getIPhone.title} <span className="font-semibold">iPhone</span>
+          </h2>
+          <Link href={"/"} className="flex items-center gap-4">
+            <span className="font-semibold">{dict.getIPhone.allLink}</span>
+            <ArrowRight size={20} />
+          </Link>
+        </div>
+        <ul className={`${generalStyles["products-wrap"]} mt-10`}>
           {products.map((product, index) => (
             <Product
               key={index}

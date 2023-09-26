@@ -3,7 +3,7 @@ import { useState } from "react";
 import Product from "../Product";
 import styles from "./productsMain.module.scss";
 import { IFetchedProduct } from "@/types";
-
+import generalStyles from "../components.module.scss";
 const ProductsClient = ({
   products,
   details,
@@ -25,7 +25,7 @@ const ProductsClient = ({
   const filteredData = products.filter((item) => item.category === filter);
   return (
     <>
-      <ul className="flex gap-4 my-4">
+      <ul className={styles["filter-wrap"]}>
         <li
           onClick={() => setFilter("all")}
           className={filter === "all" ? styles["filter-active"] : styles.filter}
@@ -44,8 +44,8 @@ const ProductsClient = ({
           </li>
         ))}
       </ul>
-      <div className="flex justify-center max-w-[1288px] mx-auto">
-        <ul className="flex flex-wrap items-center gap-4">
+      <div className="max-w-[1440px] mx-auto">
+        <ul className={generalStyles["products-wrap"]}>
           {(filter === "all" ? products : filteredData).map(
             (product, index) => (
               <Product

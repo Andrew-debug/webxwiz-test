@@ -6,22 +6,24 @@ import Search from "@/assets/icons/search.svg";
 import Person from "@/assets/icons/person.svg";
 import ShoppingCart from "../shoppingCart/ShoppingCart";
 import { DictionaryEntry } from "@/constants/content";
+import { Menu } from "lucide-react";
 
 const Navbar = ({ dict }: { dict: DictionaryEntry }) => {
   return (
     <nav className={`flex justify-between items-center ${styles.nav}`}>
+      <Menu className={styles.burger} />
       <ul className={`flex gap-6 ${styles["nav-links"]}`}>
         <NavLink href={`/`} text={dict.header.nav.home} />
         <NavLink href={`/`} text={dict.header.nav.products} isDropdown />
         <NavLink href={`/`} text={dict.header.nav.entertainment} />
         <NavLink href={`/`} text={dict.header.nav.support} />
       </ul>
-      <section
+      <div
         className={`flex justify-center items-center ${styles["apple-wrap"]}`}
       >
         <Apple />
-      </section>
-      <section className="flex items-center gap-4 mr-16">
+      </div>
+      <div className={styles["nav-user--action"]}>
         <div className={`flex items-center ${styles["input-wrap"]}`}>
           <div
             className={`flex justify-center items-center ${styles["search-wrap"]}`}
@@ -38,7 +40,7 @@ const Navbar = ({ dict }: { dict: DictionaryEntry }) => {
         <UserButton>
           <Person />
         </UserButton>
-      </section>
+      </div>
     </nav>
   );
 };

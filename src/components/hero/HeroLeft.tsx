@@ -33,7 +33,13 @@ const HeroHeader = ({
         <h1>{text}</h1>
       </span>
       {image && (
-        <Image src={image} className="pt-3" width={width} alt="glasses" />
+        <Image
+          src={image}
+          className="pt-3"
+          width={width}
+          sizes="(min-width: 672px) 20px"
+          alt="glasses"
+        />
       )}
     </header>
   );
@@ -41,8 +47,8 @@ const HeroHeader = ({
 
 const HeroLeft = ({ dict }: { dict: DictionaryEntry }) => {
   return (
-    <div className="w-[50%] flex items-center">
-      <div className="">
+    <div className={styles["hero-left"]}>
+      <div className={styles["hero-left--wrap"]}>
         <HeroHeader
           text={dict.heroLeft.firstTitle}
           image={heroText1}

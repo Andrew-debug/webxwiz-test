@@ -1,13 +1,13 @@
-import styles from "../components.module.scss";
 import Link from "next/link";
 import { footerLinks } from "@/constants";
 import LanguageSelector from "./LanguageSelector";
 import { DictionaryEntry } from "@/constants/content";
+import styles from "./footer.module.scss";
 
 const Footer = ({ dict }: { dict: DictionaryEntry }) => {
   const { language, ukraine, usa } = dict.footer;
   return (
-    <section className="max-w-[1440px] mx-auto">
+    <section className={styles.footer}>
       <div className="flex flex-wrap justify-between gap-12">
         {footerLinks.map((linksObj, index) => (
           <div key={index}>
@@ -27,7 +27,7 @@ const Footer = ({ dict }: { dict: DictionaryEntry }) => {
         ))}
       </div>
       <div className="w-full h-[1px] bg-zinc-300 my-8 mx-auto"></div>
-      <div className="flex justify-between items-center pt-4 mb-12">
+      <div className={styles["sub-footer"]}>
         <p>Copyright &#64; 2023 Apple Inc. All rights reserved.</p>
         <ul className={styles["sub-footer--links"]}>
           <li>
