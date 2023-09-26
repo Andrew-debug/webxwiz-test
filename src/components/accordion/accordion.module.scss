@@ -101,3 +101,8 @@ $layout-breakpoint-xl: 1480px;
     width: 400px;
   }
 }
+@media (max-width: $layout-breakpoint-md) {
+  .accordion {
+    display: none;
+  }
+}

@@ -33,13 +33,7 @@ const HeroHeader = ({
         <h1>{text}</h1>
       </span>
       {image && (
-        <Image
-          src={image}
-          className="pt-3"
-          width={width}
-          sizes="(min-width: 672px) 20px"
-          alt="glasses"
-        />
+        <Image src={image} className="pt-3" width={width} alt="glasses" />
       )}
     </header>
   );

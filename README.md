@@ -1,8 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a my variation to webxwiz test task.
 
 ## Getting Started
 
-First, run the development server:
+To get started:
+
+1. use git clone url in vscode or w/e u have
+2. npm i
+3.
 
 ```bash
 npm run dev
@@ -14,23 +18,22 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. ur good to go.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+(if for some reason you got 404 on main page, try localhost:3000/en)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+In this project, I used the following tools:
 
-## Learn More
+- Redux and RTK for state management across the entire app, primarily for implementing a fully functional shopping cart. Additionally, each product has its own route and modal where you can add items to the cart. You can access the cart through the header button with a shopping bag icon. I implemented there classic cart logic, like the ability to increase and decrease the number of items and delete items from the cart.
 
-To learn more about Next.js, take a look at the following resources:
+- Material UI was used whenever I felt it would save time. Although I wonder if I should have used Shadcn UI...
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- i18n for multi-language support.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Axios for fetching data. I also implemented server-side fetching from an API route.
 
-## Deploy on Vercel
+- SCSS for styling, although I occasionally mixed it with Tailwind.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+P.S. Many aspects, such as responsiveness and translation, are intentionally not finished. There's always room for improvement, but I didn't want to spend excessive time on them. The primary purpose of this project is to demonstrate problem-solving skills.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Cheers

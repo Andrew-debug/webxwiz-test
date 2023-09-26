@@ -73,6 +73,7 @@ $layout-breakpoint-xl: 1480px;
 @media (max-width: $layout-breakpoint-md) {
   .burger {
     display: block;
+    margin-left: 16px;
   }
   .nav-links {
     display: none;
