@@ -79,7 +79,10 @@ $layout-breakpoint-xl: 1480px;
   }
 }
 @media (max-width: $layout-breakpoint-xl) {
-  .nav {
+  .nav ul {
     margin-left: 16px;
+  }
+  .apple-wrap {
+    margin-left: 10px;
   }
 }

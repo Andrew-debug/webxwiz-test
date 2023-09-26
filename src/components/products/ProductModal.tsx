@@ -37,7 +37,7 @@ export default function ProductModal({
   };
 
   const handleClose = () => {
-    router.replace(`/${pathname === "en" ? "en" : "uk"}`, { scroll: false });
+    router.back();
     setOpen(false);
   };
 
