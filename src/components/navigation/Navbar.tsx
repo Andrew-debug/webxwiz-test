@@ -11,7 +11,9 @@ import { Menu } from "lucide-react";
 const Navbar = ({ dict }: { dict: DictionaryEntry }) => {
   return (
     <nav className={`flex justify-between items-center ${styles.nav}`}>
-      <Menu className={styles.burger} />
+      <div className={styles.burger}>
+        <Menu />
+      </div>
       <ul className={`flex gap-6 ${styles["nav-links"]}`}>
         <NavLink href={`/`} text={dict.header.nav.home} />
         <NavLink href={`/`} text={dict.header.nav.products} isDropdown />

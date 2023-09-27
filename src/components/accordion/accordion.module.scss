@@ -91,9 +91,14 @@ $layout-breakpoint-xl: 1480px;
     width: 700px;
   }
 }
-@media (max-width: 1160px) {
+@media (max-width: 1180px) {
   .slide.active {
-    width: 600px;
+    width: 550px;
+  }
+}
+@media (max-width: 1000px) {
+  .slide.active {
+    width: 500px;
   }
 }
 @media (max-width: $layout-breakpoint-base) {

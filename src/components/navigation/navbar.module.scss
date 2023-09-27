@@ -60,9 +60,6 @@ $layout-breakpoint-xl: 1480px;
 }
 
 @media (max-width: $layout-breakpoint-base) {
-  .input-wrap {
-    width: 200px;
-  }
   .apple-wrap {
     margin-left: auto;
   }
@@ -70,7 +67,7 @@ $layout-breakpoint-xl: 1480px;
     margin-right: 16px;
   }
 }
-@media (max-width: $layout-breakpoint-md) {
+@media (max-width: 1000px) {
   .burger {
     display: block;
     margin-left: 16px;
@@ -85,5 +82,15 @@ $layout-breakpoint-xl: 1480px;
   }
   .apple-wrap {
     margin-left: 10px;
+  }
+}
+@media (max-width: $layout-breakpoint-sm) {
+  .input-wrap {
+    width: 200px;
+  }
+}
+@media (max-width: 490px) {
+  .input-wrap {
+    display: none;
   }
 }

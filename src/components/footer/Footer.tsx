@@ -28,7 +28,7 @@ const Footer = ({ dict }: { dict: DictionaryEntry }) => {
       </div>
       <div className="w-full h-[1px] bg-zinc-300 my-8 mx-auto"></div>
       <div className={styles["sub-footer"]}>
-        <p>Copyright &#64; 2023 Apple Inc. All rights reserved.</p>
+        <p>Copyright &#64; Apple Inc. Written by Andrii Yatsenko.</p>
         <ul className={styles["sub-footer--links"]}>
           <li>
             <Link href={"/"}>Privacy Policy</Link>

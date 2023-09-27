@@ -37,3 +37,11 @@ $layout-breakpoint-xl: 1480px;
     gap: 16px;
   }
 }
+@media (max-width: $layout-breakpoint-sm) {
+  .sub-footer--links {
+    display: block;
+  }
+  .sub-footer--links li {
+    margin-top: 12px;
+  }
+}
