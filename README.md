@@ -24,7 +24,7 @@ bun dev
 
 In this project, I used the following tools:
 
-- Redux and RTK for state management across the entire app, primarily for implementing a fully functional shopping cart. Additionally, each product has its own route and modal where you can add items to the cart. You can access the cart through the header button with a shopping bag icon. I implemented there classic cart logic, like the ability to increase and decrease the number of items and delete items from the cart.
+- Redux and RTK for state management across the entire app, primarily for implementing a fully functional shopping cart. Additionally, each product has its own route and modal where you can add items to the cart. You can access the cart through the header button with a shopping bag icon. I implemented there classic cart logic, like the ability to increase and decrease the number of items and delete items from the cart. Also, it's worth mentioning that I implemented a working filter. The filters are added automatically, so the more products you have, the more unique filters there are going to be.
 
 - Material UI was used whenever I felt it would save time. Although I wonder if I should have used Shadcn UI...
 
