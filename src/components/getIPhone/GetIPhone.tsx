@@ -5,11 +5,11 @@ import Product from "../Product";
 import { IFetchedProduct } from "@/types";
 import { DictionaryEntry } from "@/constants/content";
 import styles from "./getIPhone.module.scss";
+import axios from "axios";
+
 const GetIPhone = async ({ dict }: { dict: DictionaryEntry }) => {
-  const res = await fetch("http://localhost:3000/api/productsData").then(
-    (res) => res.json()
-  );
-  const products: IFetchedProduct[] = res.slice(0, 4) || [];
+  const res = await axios.get("https://dummyjson.com/products");
+  const products: IFetchedProduct[] = res?.data?.products.slice(0, 4) || [];
   const {
     getIPhone: { startPrice },
     details,

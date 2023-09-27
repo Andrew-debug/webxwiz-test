@@ -2,12 +2,11 @@ import generalStyles from "../components.module.scss";
 import ProductsClient from "./ProductsClient";
 import { IFetchedProduct } from "@/types";
 import { DictionaryEntry } from "@/constants/content";
+import axios from "axios";
 
 const ProductsMain = async ({ dict }: { dict: DictionaryEntry }) => {
-  const res = await fetch("http://localhost:3000/api/productsData").then(
-    (res) => res.json()
-  );
-  const products: IFetchedProduct[] = res.slice(4, 12) || [];
+  const res = await axios.get("https://dummyjson.com/products");
+  const products: IFetchedProduct[] = res?.data?.products.slice(0, 4) || [];
   const {
     getIPhone: { startPrice },
     details,
