@@ -6,7 +6,7 @@ import axios from "axios";
 
 const ProductsMain = async ({ dict }: { dict: DictionaryEntry }) => {
   const res = await axios.get("https://dummyjson.com/products");
-  const products: IFetchedProduct[] = res?.data?.products.slice(0, 4) || [];
+  const products: IFetchedProduct[] = res?.data?.products.slice(4, 12) || [];
   const {
     getIPhone: { startPrice },
     details,
